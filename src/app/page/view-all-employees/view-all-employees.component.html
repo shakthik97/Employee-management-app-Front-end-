@@ -1,0 +1,36 @@
+<div class="container m-5">
+    <h1 class="text-center mb-4 bg-info p-4 text-white fw-bold border-5">VIEW ALL EMPLOYEES</h1>
+
+    <div class="table-container">
+        <table class="styled-table">
+            <thead>
+                <tr id="colnames">
+                    <th>Count</th>
+                    <th>Id</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email Address</th>
+                    <th>Department Id</th>
+                    <th>Role Id</th>
+                    <th></th>
+                </tr>
+                <tr *ngFor="let employee of employeeList;index as i" >
+                    <td>{{i + 1}}</td>
+                    <td>{{"EMP#"+employee.id}}</td>
+                    <td>{{employee.firstName}}</td>
+                    <td>{{employee.lastName}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.departmentId}}</td>
+                    <td>{{employee.roleId}}</td>
+                    <td><button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Add your table rows here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
