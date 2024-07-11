@@ -14,6 +14,8 @@
                     <th>Role Id</th>
                     <th></th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr *ngFor="let employee of employeeList;index as i" >
                     <td>{{i + 1}}</td>
                     <td>{{"EMP#"+employee.id}}</td>
@@ -22,13 +24,10 @@
                     <td>{{employee.email}}</td>
                     <td>{{employee.departmentId}}</td>
                     <td>{{employee.roleId}}</td>
-                    <td><button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
+                    <td><button class="btn btn-danger" (click)="deleteEmployee(employee)"><i class="bi bi-trash3-fill"></i></button></td>
 
 
                 </tr>
-            </thead>
-            <tbody>
-                <!-- Add your table rows here -->
             </tbody>
         </table>
     </div>

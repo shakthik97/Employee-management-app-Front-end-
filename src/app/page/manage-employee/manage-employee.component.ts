@@ -24,14 +24,27 @@ export class ManageEmployeeComponent {
   constructor(private http: HttpClient){}
 
   addEmployee(){
-    this.http.post("http://localhost:8080/employee/add", this.employeeObj).subscribe(
-      (data) => {
-        Swal.fire({
-          title: "Good job!",
-          text: "Registered!",
-          icon: "success"
-        });
+
+    Swal.fire({
+      title: "Would you like to add this?",
+      // text: "You won't be able to revert this!",
+      icon: "info",
+      // showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      // cancelButtonColor: "#d33",
+      confirmButtonText: "Yes"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.http.post("http://localhost:8080/employee/add", this.employeeObj).subscribe(
+          (data) => {
+            Swal.fire({
+              title: "Good job!",
+              text: "Registered!",
+              icon: "success"
+            });
+          }
+        )
       }
-    )
+    });
   }
 }
