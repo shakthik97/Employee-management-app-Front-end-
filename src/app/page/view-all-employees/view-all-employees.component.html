@@ -13,6 +13,7 @@
                     <th>Department Id</th>
                     <th>Role Id</th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -25,11 +26,84 @@
                     <td>{{employee.departmentId}}</td>
                     <td>{{employee.roleId}}</td>
                     <td><button class="btn btn-danger" (click)="deleteEmployee(employee)"><i class="bi bi-trash3-fill"></i></button></td>
-
+                    <td>
+                        <!-- <button class="btn btn-success" (click)="updateEmployee(employee)"><i class="bi bi-pencil-square"></i></button> -->
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  (click)="updateEmployee(employee)">
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                    </td>
 
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
+
+
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: rgb(0, 118, 157);">
+          <h1 class="modal-title w-100 text-center fs-5 text-white" id="staticBackdropLabel">UPDATE EMPLOYEE DETAILS</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <label for="inputId" class="form-label" >ID</label>
+            <input type="text" id="inputId" class="form-control" disabled aria-describedby="passwordHelpBlock" [(ngModel)]="id" >
+          </div>
+
+          <div class="mt-4">
+            <label for="inputFirstName" class="form-label">First Name</label>
+            <input type="text" id="inputFirstName" class="form-control" aria-describedby="passwordHelpBlock" [(ngModel)]="firstName">
+          </div>
+
+          <div class="mt-4">
+            <label for="inputLastName" class="form-label">Last Name</label>
+            <input type="text" id="inputLastName" class="form-control" aria-describedby="passwordHelpBlock" [(ngModel)]="lastName">
+          </div>
+
+          <div class="mt-4">
+            <label for="inputEmail" class="form-label">Email Address</label>
+            <input type="text" id="inputEmail" class="form-control" aria-describedby="passwordHelpBlock" [(ngModel)]="email">
+          </div>
+
+          <div class="mt-4">
+              <select class="form-select mb-3" aria-label="Default select example" [(ngModel)]="departmentId">
+                <option value="">Select The Department</option>
+                <option value="Human resources">Human resources</option>
+                <option value="Finance">Finance</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Sales">Sales</option>
+                <option value="IT">IT</option>
+                <option value="Customer sevice">Customer Service</option>
+                <option value="Research & Development">Research & Development</option>
+                <option value="Operations">Operations</option>
+                <option value="Legal">Legal</option>
+                <option value="Administration">Administration</option>
+              </select>
+
+              <select class="form-select" aria-label="Default select example" [(ngModel)]="roleId">
+                <option value="">Select The Role</option>
+                <option value="Manager">Manager</option>
+                <option value="Asistant Manager">Asistant Manager</option>
+                <option value="Senior Executive">Senior Executive</option>
+                <option value="Executive">Executive</option>
+                <option value="Team Leader">Team Leader</option>
+                <option value="Coordinator">Coordinator</option>
+                <option value="Analyst">Analyst</option>
+                <option value="Specialist">Specialist</option>
+                <option value="Consultant">Consultant</option>
+                <option value="Intern">Intern</option>
+              </select>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="updateConfirmed()">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 

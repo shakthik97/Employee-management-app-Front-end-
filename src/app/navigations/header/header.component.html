@@ -1,0 +1,35 @@
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </div>
+      </div>
+    </div>
+  </nav> -->
+
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary custom-navbar">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+            <button class="nav-link" [routerLink]="['/add-employee']" routerLinkActive="active" aria-current="page" id="Home">Home</button>
+            <button class="nav-link" routerLink="/add-employee" routerLinkActive="active">Add Employee</button>
+            <button class="nav-link" routerLink="/view-all-employees" routerLinkActive="active">List</button>
+          <!-- <a class="nav-link" href="#">Disabled</a> -->
+        </div>
+      </div>
+    </div>
+</nav>
+
+
+

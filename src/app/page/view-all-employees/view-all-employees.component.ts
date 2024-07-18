@@ -13,6 +13,15 @@ import Swal from 'sweetalert2';
 })
 export class ViewAllEmployeesComponent {
 
+  public updatedEmployee = {
+    id: undefined,
+    firstName : undefined,
+    lastName : undefined,
+    email : undefined,
+    departmentId : undefined,
+    roleId : undefined
+  }
+
   public employeeList: any;
 
   constructor(private http: HttpClient){
@@ -50,9 +59,47 @@ export class ViewAllEmployeesComponent {
         });
       }
     });
-
-    console.log(employee);
+    // console.log(employee);
    
   }
+  public id:any = undefined;
+  public firstName:any = undefined;
+  public lastName:any =  undefined;
+  public email:any =  undefined;
+  public departmentId :any = undefined;
+  public roleId :any = undefined;
 
+  
+  updateEmployee(employee: any){
+
+      this.id = employee.id;
+      this.firstName = employee.firstName;
+      this.lastName = employee.lastName;
+      this.email = employee.email;
+      this.departmentId = employee.departmentId;
+      this.roleId = employee.roleId
+       
+      }
+
+  public updateConfirmed(){
+
+      this.updatedEmployee.id = this.id;
+      this.updatedEmployee.firstName = this.firstName;
+      this.updatedEmployee.lastName = this.lastName;
+      this.updatedEmployee.email = this.email;
+      this.updatedEmployee.departmentId = this.departmentId;
+      this.updatedEmployee.roleId = this.roleId;
+
+
+      if(this.updatedEmployee != null){
+          
+        this.http.put("http://localhost:8080/employee/update-emp", this.updatedEmployee).subscribe(
+          (data) => {
+            console.log(data);
+          }
+        )
+      }
+  }
 }
+
+

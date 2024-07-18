@@ -1,7 +1,10 @@
 <div class="container m-5">
     <h1 class="text-center mb-4 bg-info p-4 text-white fw-bold border-5">ADD EMPLOYEE</h1>
 
-    <div class="input-group mb-3">
+   <div class="row">
+    <div class="col-6 mt-5" >
+
+      <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1"></span>
         <input type="text" class="form-control" placeholder="First Name" aria-label="Username" [(ngModel)]="employeeObj.firstName" aria-describedby="basic-addon1">
       </div>
@@ -45,8 +48,10 @@
               </select>
         </div>
 
-         <div>
-            <button class="btn btn-success mt-3" (click)="addEmployee()">add Employee</button>
+         <div class="centered-container">
+            <button class="btn btn-success mt-lg-5 " (click)="addEmployee()">add Employee</button>
         </div>
+    </div>
+   </div>
   
 </div>
